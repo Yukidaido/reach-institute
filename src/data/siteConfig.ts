@@ -7,6 +7,8 @@ export const siteConfig = {
   contactFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfK3qLoBSwY5GMUMhqf2FtJ1oE7hIH4BPLuvfLCGC4M2ta_gQ/viewform?usp=publish-editor",
 };
 
+export const publicAssetPath = (path: string) => `${process.env.NODE_ENV === "production" ? "/reach-institute" : ""}${path}`;
+
 export const navigation = [
   { label: "Home", href: "#home" },
   { label: "理念", href: "#principles" },

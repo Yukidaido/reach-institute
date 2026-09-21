@@ -6,7 +6,7 @@ import { useState } from "react";
 import { SiteHeader } from "@/components/site-header";
 import { members } from "@/data/members";
 import { newsItems } from "@/data/news";
-import { navigation, siteConfig } from "@/data/siteConfig";
+import { navigation, publicAssetPath, siteConfig } from "@/data/siteConfig";
 
 const principles = [
   "将来の主権者としての自覚と教養を育む",
@@ -132,7 +132,7 @@ export default function Home() {
               <div className="platform__badge">DEVELOPMENT IN PROGRESS</div>
               <div className="platform__preview" aria-label="Reachアプリのモバイル画面イメージ">
                 <Image
-                  src="/images/reach-platform-preview.png"
+                  src={publicAssetPath("/images/reach-platform-preview.png")}
                   alt="Reachアプリの開発中画面"
                   width={760}
                   height={760}
@@ -200,7 +200,7 @@ export default function Home() {
       </main>
 
       <footer className="site-footer">
-        <div className="container"><div className="footer-top"><div><div className="footer-brand"><Image src="/images/reach-mark.svg" alt="" width={42} height={42} /><div><div className="footer-wordmark">REACH</div><p className="wordmark__sub">Institute Thinktank【学生団体】</p></div></div><p className="footer-tagline">新たな民主主義を作る</p></div><nav className="footer-nav" aria-label="フッターナビゲーション">{navigation.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}<Link href="/privacy-policy">プライバシーポリシー</Link><a href={siteConfig.instagramUrl}>Instagram</a></nav></div><div className="footer-bottom"><span>Copyright © 2026 Reach Institute Thinktank【学生団体】. All rights reserved.</span><span>Official site</span></div></div>
+        <div className="container"><div className="footer-top"><div><div className="footer-brand"><Image src={publicAssetPath("/images/reach-mark.svg")} alt="" width={42} height={42} /><div><div className="footer-wordmark">REACH</div><p className="wordmark__sub">Institute Thinktank【学生団体】</p></div></div><p className="footer-tagline">新たな民主主義を作る</p></div><nav className="footer-nav" aria-label="フッターナビゲーション">{navigation.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}<Link href="/privacy-policy">プライバシーポリシー</Link><a href={siteConfig.instagramUrl}>Instagram</a></nav></div><div className="footer-bottom"><span>Copyright © 2026 Reach Institute Thinktank【学生団体】. All rights reserved.</span><span>Official site</span></div></div>
       </footer>
     </div>
   );

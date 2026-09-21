@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { navigation, siteConfig } from "@/data/siteConfig";
+import { navigation, publicAssetPath, siteConfig } from "@/data/siteConfig";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +14,7 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="site-header__inner">
         <Link className="wordmark" href="#home" onClick={closeMenu}>
-          <Image className="wordmark__mark" src="/images/reach-mark.svg" alt="" width={34} height={34} priority />
+          <Image className="wordmark__mark" src={publicAssetPath("/images/reach-mark.svg")} alt="" width={34} height={34} priority />
           <span className="wordmark__divider" aria-hidden="true" />
           <span className="wordmark__text"><span className="wordmark__name">REACH</span><span className="wordmark__sub">Institute Thinktank【学生団体】</span></span>
         </Link>
